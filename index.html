@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechVault — Big &amp; Powerful Tech Store</title>
+  <meta name="description" content="TechVault: the full-featured electronics store. Shop laptops, phones, audio, wearables, cameras, drones and more with a powerful catalog, cart, checkout and admin." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ============ TOP PROMO BAR ============ -->
+  <div class="promo-bar" id="promoBar">
+    <p>⚡ <strong>Store-wide sale:</strong> use code <code>VAULT10</code> for 10% off everything · Free shipping over $75</p>
+    <button class="promo-close" aria-label="Dismiss promo" id="promoClose">&times;</button>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#/" data-nav>
+        <span class="brand-mark">⚡</span>
+        <span class="brand-text">Tech<span>Vault</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#/" data-nav>Home</a>
+        <a href="#/shop" data-nav>Shop</a>
+        <a href="#/shop?cat=deals" data-nav>Deals</a>
+        <a href="#/shop?cat=featured" data-nav>Featured</a>
+      </nav>
+
+      <div class="header-search" role="search">
+        <svg viewBox="0 0 24 24" class="search-ico" aria-hidden="true"><path d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="searchInput" placeholder="Search headphones, laptops, drones…" autocomplete="off" aria-label="Search products" />
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
+
+      <div class="header-actions">
+        <a href="#/wishlist" class="icon-btn" data-nav aria-label="Wishlist" data-count-el="wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C7 16 3 12.6 3 8.7 3 6 5 4 7.5 4c1.7 0 3.3.9 4.5 2.4C13.2 4.9 14.8 4 16.5 4 19 4 21 6 21 8.7c0 3.9-4 7.3-9 12.3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span class="count-badge" data-badge="wishlist" hidden>0</span>
+        </a>
+        <a href="#/cart" class="icon-btn" data-nav aria-label="Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 8.5h-12zM6 6L5 3H2M9 20a1 1 0 100-2 1 1 0 000 2zM17 20a1 1 0 100-2 1 1 0 000 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="count-badge accent" data-badge="cart" hidden>0</span>
+        </a>
+        <a href="#/admin" class="btn btn-ghost btn-sm admin-link" data-nav>Admin</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#/" data-nav>Home</a>
+    <a href="#/shop" data-nav>Shop</a>
+    <a href="#/shop?cat=deals" data-nav>Deals</a>
+    <a href="#/shop?cat=featured" data-nav>Featured</a>
+    <a href="#/wishlist" data-nav>Wishlist</a>
+    <a href="#/cart" data-nav>Cart</a>
+    <a href="#/admin" data-nav>Admin</a>
+  </div>
+
+  <!-- ============ CART DRAWER ============ -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h2>Your Cart <span class="drawer-count" id="drawerCount">0</span></h2>
+      <button class="icon-btn" id="drawerClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-footer" id="drawerFooter"></div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ============ MAIN ============ -->
+  <main id="app" class="app" tabindex="-1"></main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a class="brand" href="#/" data-nav><span class="brand-mark">⚡</span><span class="brand-text">Tech<span>Vault</span></span></a>
+        <p class="footer-tag">Big and powerful tech, delivered. Your one-stop vault for the gear that powers your world.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#/shop" data-nav>All Products</a>
+        <a href="#/shop?cat=deals" data-nav>Deals</a>
+        <a href="#/shop?cat=featured" data-nav>Featured</a>
+        <a href="#/wishlist" data-nav>Wishlist</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#/" data-nav>About</a>
+        <a href="#/" data-nav>Careers</a>
+        <a href="#/admin" data-nav>Admin Portal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Stay connected</h4>
+        <p>Sign up for drops &amp; exclusive promos.</p>
+        <form class="newsletter" id="newsletterForm">
+          <input type="email" placeholder="you@email.com" aria-label="Email" required />
+          <button class="btn btn-primary btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> TechVault. A demo e-commerce store — no real checkout.</span>
+      <div class="footer-pay" aria-label="Payment methods">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Apple&nbsp;Pay</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TOASTS ============ -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
